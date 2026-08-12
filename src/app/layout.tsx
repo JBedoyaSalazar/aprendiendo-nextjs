@@ -1,8 +1,6 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
-import "./globals.css";
-import { Header } from "app/components";
+import { Header, Footer } from "app/components";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,10 +12,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "My New Store",
-  description: "Generating a store with Next.js 16 and TypeScript",
-};
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
@@ -25,6 +19,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
