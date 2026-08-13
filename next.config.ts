@@ -5,8 +5,8 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
 
   sassOptions: {
-    includePaths: [path.join(process.cwd(), "src/sass")],
-    additionalData: `@use "main.sass" as *;`,
+    loadPaths: [path.join(process.cwd(), "src/sass")],
+    additionalData: `@use "main" as *\n`,
   },
 };
 
