@@ -1,10 +1,26 @@
+import Image from "next/image";
+import styles from "./Description.module.sass";
+
 export const Description = () => {
-    return (
-        <section>
-            <h2>Welcome to Our Website</h2>
-            <p>
-                This is a sample description of our website. We provide various services and products to our customers. Explore our store and find what you need!
-            </p>
-        </section>
-    )
-}
+  return (
+    <section className={styles.Description}>
+      <Image
+        src="/images/description.jpeg"
+        alt="products marketplace"
+        width={500}
+        height={300}
+        loading="eager"
+        className={styles.Description__image}
+      />
+      <div className={styles.Description__text}>
+        <h2>Bring the future today</h2>
+
+        <p>
+          Future World: Your Gateway to Tomorrow&apos;s Tech! Dive into a world of
+          cutting-edge gadgets and gear. Stay ahead of the curve and redefine
+          your digital lifestyle with us.
+        </p>
+      </div>
+    </section>
+  );
+};
