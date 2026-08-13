@@ -9,6 +9,7 @@ export const Description = () => {
           src="/images/description.jpeg"
           alt="products marketplace"
           fill
+          sizes="(max-width: 768px) 100vw, 500px"
           loading="eager"
         />
       </div>

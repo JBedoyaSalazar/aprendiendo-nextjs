@@ -24,3 +24,18 @@
       font-size: 1.5rem
       line-height: 1.75
       color: $text-color
+
+@media (max-width: 768px)
+    .Description
+        grid-template-columns: 1fr
+        row-gap: 2rem
+        margin: 4rem auto
+        padding: 2rem 1.5rem
+
+        &__imageContainer
+            width: 100%
+            height: auto
+            aspect-ratio: 5 / 3
+
+        &__text
+            width: 100%
