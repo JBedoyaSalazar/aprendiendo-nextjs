@@ -1,18 +1,35 @@
+"use client";
 import Image from "next/image";
+import { useState } from "react";
+import classNames from "classnames/bind";
+
 import styles from "./Description.module.sass";
 
+
+
 export const Description = () => {
+  const [hasBorder, setBorder] = useState(false);
+  const handleClick = () => setBorder(!hasBorder);
+
+  const cx = classNames.bind(styles);
+
+  const buttonStyles = cx("Description__button", {
+    "Description__button--border": hasBorder,
+  });
+
   return (
     <section className={styles.Description}>
-      <div className={styles.Description__imageContainer}>
-        <Image
-          src="/images/description.jpeg"
-          alt="products marketplace"
-          fill
-          sizes="(max-width: 768px) 100vw, 500px"
-          loading="eager"
-        />
-      </div>
+      <button onClick={handleClick} className={buttonStyles}>
+        <div className={styles.Description__imageContainer}>
+          <Image
+            src="/images/description.jpeg"
+            alt="products marketplace"
+            fill
+            sizes="(max-width: 768px) 100vw, 500px"
+            loading="eager"
+          />
+        </div>
+      </button>
 
       <div className={styles.Description__text}>
         <h2>Bring the future today</h2>
